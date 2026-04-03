@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giftly &mdash; Perfect Gift Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo-tag">&#10022; Gift Curator</div>
+    <h1>Find the <em>Perfect</em><br>Gift</h1>
+    <p class="subtitle">Tell us about them. We'll find what they'll love.</p>
+    <div class="divider"><div class="divider-gem"></div></div>
+  </header>
+
+  <main>
+    <div id="form-view">
+      <div class="card">
+
+        <!-- Who -->
+        <div class="card-section">
+          <div class="section-label">Who are you gifting?</div>
+          <div class="gender-grid">
+            <button class="sel-btn gender-btn" data-val="man"    onclick="pick('gender',this)"><span class="icon">&#128104;</span>Man</button>
+            <button class="sel-btn gender-btn" data-val="woman"  onclick="pick('gender',this)"><span class="icon">&#128105;</span>Woman</button>
+            <button class="sel-btn gender-btn" data-val="anyone" onclick="pick('gender',this)"><span class="icon">&#129489;</span>Anyone</button>
+          </div>
+        </div>
+        <div class="sep"></div>
+
+        <!-- Age -->
+        <div class="card-section">
+          <div class="section-label">Their Age Group</div>
+          <div class="age-grid">
+            <button class="sel-btn age-btn" data-val="teen (13-17)"        onclick="pick('age',this)">Teen<br><small>13&ndash;17</small></button>
+            <button class="sel-btn age-btn" data-val="young adult (18-29)" onclick="pick('age',this)">Young<br><small>18&ndash;29</small></button>
+            <button class="sel-btn age-btn" data-val="adult (30-49)"       onclick="pick('age',this)">Adult<br><small>30&ndash;49</small></button>
+            <button class="sel-btn age-btn" data-val="senior (50+)"        onclick="pick('age',this)">Senior<br><small>50+</small></button>
+          </div>
+        </div>
+        <div class="sep"></div>
+
+        <!-- Occasion -->
+        <div class="card-section">
+          <div class="section-label">Occasion</div>
+          <div class="occasion-grid">
+            <button class="sel-btn occ-btn" data-val="Birthday"                     onclick="pick('occ',this)">&#127874; Birthday</button>
+            <button class="sel-btn occ-btn" data-val="Anniversary"                  onclick="pick('occ',this)">&#128141; Anniversary</button>
+            <button class="sel-btn occ-btn" data-val="Festive (Christmas or Diwali)" onclick="pick('occ',this)">&#127876; Festive</button>
+            <button class="sel-btn occ-btn" data-val="Wedding"                      onclick="pick('occ',this)">&#128144; Wedding</button>
+            <button class="sel-btn occ-btn" data-val="Graduation"                   onclick="pick('occ',this)">&#127891; Graduation</button>
+            <button class="sel-btn occ-btn" data-val="Just because"                 onclick="pick('occ',this)">&#128157; Just Because</button>
+          </div>
+        </div>
+        <div class="sep"></div>
+
+        <!-- Budget -->
+        <div class="card-section">
+          <div class="section-label">Budget</div>
+          <div class="currency-row">
+            <button class="curr-btn active" data-sym="&#8377;" data-max="25000" onclick="setCurrency(this)">&#8377; INR</button>
+            <button class="curr-btn"        data-sym="$"       data-max="500"   onclick="setCurrency(this)">$ USD</button>
+            <button class="curr-btn"        data-sym="&#8364;" data-max="500"   onclick="setCurrency(this)">&#8364; EUR</button>
+            <button class="curr-btn"        data-sym="&#163;"  data-max="400"   onclick="setCurrency(this)">&#163; GBP</button>
+          </div>
+          <div class="budget-display">
+            <div class="budget-amount" id="budgetDisplay">&#8377;2,000</div>
+            <div class="budget-label">maximum budget</div>
+          </div>
+          <div class="budget-presets" id="presets"></div>
+          <div class="slider-wrap">
+            <input type="range" id="budgetSlider" min="0" max="25000" value="2000" step="100" oninput="updateBudget(this.value)">
+          </div>
+        </div>
+        <div class="sep"></div>
+
+        <!-- Hobbies -->
+        <div class="card-section">
+          <div class="section-label">Their Interests &amp; Hobbies</div>
+          <div class="hobby-chips">
+            <span class="chip" onclick="this.classList.toggle('active')">&#128218; Reading</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127918; Gaming</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127925; Music</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127859; Cooking</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127939; Fitness</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#9992;&#65039; Travel</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127912; Art</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#128247; Photography</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127807; Gardening</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#129487; Yoga</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#128062; Pets</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#9917; Sports</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#127916; Movies</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#128717;&#65039; Fashion</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#9749; Coffee/Tea</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#128295; DIY/Tech</span>
+            <span class="chip" onclick="this.classList.toggle('active')">&#129513; Puzzles</span>
+          </div>
+        </div>
+        <div class="sep"></div>
+
+        <!-- Notes -->
+        <div class="card-section">
+          <div class="section-label">Anything Else?</div>
+          <div class="input-group">
+            <textarea id="extraNotes" rows="3" placeholder="e.g. She loves minimalist things, he already has headphones, they are into K-pop..."></textarea>
+          </div>
+        </div>
+
+        <div class="error-box" id="errorBox"></div>
+
+        <div class="submit-wrap">
+          <button class="submit-btn" onclick="findGifts()">&#10022; Find Perfect Gifts</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div class="loading-overlay" id="loadingView">
+      <div class="spinner-wrap">
+        <div class="spinner"></div>
+        <div class="spinner-inner"></div>
+      </div>
+      <p class="loading-text" id="loadingText">Curating thoughtful gifts...</p>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+      <div class="results-header">
+        <div class="logo-tag" style="margin-bottom:12px">&#10022; Curated For You</div>
+        <h2 class="results-title">Your Gift Recommendations</h2>
+        <p class="results-subtitle" id="resultsSubtitle"></p>
+      </div>
+      <div id="giftList"></div>
+      <button class="try-again-btn" onclick="resetForm()">&larr; Start Over</button>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">&#10022; Giftly &mdash; Find the perfect gift, every time</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
