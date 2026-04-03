@@ -134,4 +134,4 @@ MIT — free to use, modify, and deploy.
 
 ---
 
-*Built by [Your Name](https://github.com/your-username)*
+*Built by [Lipsa](https://github.com/Lipsanayak414)*
