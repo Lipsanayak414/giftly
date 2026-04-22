@@ -2,7 +2,7 @@
 
 > A zero-backend, mobile-first web application that uses Google Gemini AI to generate personalised gift recommendations with multi-retailer purchase links.
 
-🌐 **Live Site:** [your-username.github.io/giftly](https://your-username.github.io/giftly)
+🌐 **Live Site:** [Lipsanayak414.github.io/giftly](https://Lipsanayak414.github.io/giftly)
 
 ---
 
@@ -93,22 +93,7 @@ python3 -m http.server 8000
 # Open http://localhost:8000
 ```
 
-### Configuration
 
-**Gemini API key** — get a free key at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) and set it in `index.html`:
-
-```js
-var apiKey = 'YOUR_GEMINI_API_KEY';
-```
-
-**Affiliate tags** — add your Amazon Associates IDs:
-
-```js
-var ATAGS = {
-  'amazon.in':    'your-tag-21',
-  'amazon.co.uk': 'your-tag-21',
-};
-```
 
 ---
 
@@ -125,12 +110,6 @@ var ATAGS = {
 ## Interests Supported
 
 Reading · Gaming · Music · Cooking · Fitness · Travel · Art · Photography · Gardening · Yoga · Pets · Sports · Movies · Fashion · Coffee/Tea · DIY/Tech · Puzzles
-
----
-
-## Licence
-
-MIT — free to use, modify, and deploy.
 
 ---
 
