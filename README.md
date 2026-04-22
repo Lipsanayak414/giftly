@@ -76,7 +76,6 @@ Amazon.de · Thalia · Zalando · MediaMarkt · Etsy
 giftly/
 ├── index.html        # Entire application — UI, styles, and logic
 ├── README.md         # Project documentation
-├── CASE_STUDY.md     # In-depth technical write-up
 └── .gitignore        # Git ignore rules
 ```
 
